@@ -1,0 +1,191 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*BODY*/
+body {
+    background-image: url(/weather-image/vecteezy_clear-blue-sky-with-cloud-and-sun-concept_7222919.jpg);
+    background-position: center;
+    background-size:cover;
+    background-repeat:repeat;}
+    /* HEADER */
+ 
+header {
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+} 
+ main {
+    display: flex;
+    flex-direction: column;
+  width: 100vw;
+    height:80vh;
+} 
+ .primera {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-content: center;
+    align-items: center;
+    gap: 3rem;
+} 
+ button {
+    width: 8rem;
+    height: 2rem;
+    margin-top: 1rem;
+}
+.primera ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+}
+.ciudad {
+    font-size: 2rem;
+}
+.pais {
+    font-size: 2rem;
+}
+img {
+    width: 150px;
+    height: 150px;
+}
+ .segunda {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    
+} 
+ article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem; 
+}  
+ .horaslluvia div{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; 
+    text-align: center;
+}  
+/*Realizamos el media querie para hacer responvie la página */
+
+@media (min-width: 600px){
+/*BODY*/
+body {
+    background-image: url(/weather-image/vecteezy_clear-blue-sky-with-cloud-and-sun-concept_7222919.jpg);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    /* HEADER */
+}
+header {
+    font-size: 3rem;
+    text-align: center;
+}
+/*Creamos 3 divs vacios para realizar el efecto de nube */
+.nube {
+width: 120px;
+height: 120px;
+background-image: url(/weather-image/nublado.png);
+background-size: 100% 100%;
+position: absolute;
+animation: movimiento1 45s infinite;
+}
+@keyframes movimiento1 {
+    from{
+margin-left: 100%;
+    }
+    to {
+        margin-left: -30%;
+    }
+}
+.nube1 {
+    width: 120px;
+    height: 120px;
+    background-image: url(/weather-image/nublado.png);
+    background-size: 100% 100%;
+    position: absolute;
+    animation: movimiento2 50s infinite;
+    margin-top: 30px;
+    }
+    @keyframes movimiento2 {
+        from{
+    margin-left: 100%;
+        }
+        to {
+            margin-left: -30%;
+        }
+    }
+    .nube2 {
+        width: 120px;
+        height: 120px;
+        background-image: url(/weather-image/nublado.png);
+        background-size: 100% 100%;
+        position: absolute;
+        margin-top: 10px;
+        animation: movimiento3 55s infinite;
+        }
+        @keyframes movimiento3 {
+            from{
+        margin-left: 100%;
+            }
+            to {
+                margin-left: -30%;
+            }
+        }
+/*MAIN*/
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  width: 100vw;
+    height:80vh;  
+}
+.segunda {
+    justify-content: center;
+}
+.primera {
+    gap: 1rem;
+    justify-content: space-evenly;
+    align-content: center;
+}
+button {
+    margin-bottom: 0;
+}
+.prevision {
+    font-size: 4rem; 
+}
+
+/* Efecto lluvia para interactuar con el usuario */
+.activarLluvia::before {
+    content: ""; 
+   position:absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+    background-image: url(
+https://media.geeksforgeeks.org/wp-content/uploads/20200828184719/rain-300x300.png); 
+   animation: rain 0.4s linear infinite;
+   opacity: 0;
+}
+@keyframes rain {
+   0% {
+       background-position: 0 0;
+       opacity: 1;
+   }
+
+   100% {
+       background-position: 8% 80%;
+       opacity: 1;
+   }
+}      
+}
