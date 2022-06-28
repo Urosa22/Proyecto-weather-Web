@@ -333,7 +333,7 @@ function ponerImagen() {
     document.querySelector("button").remove() 
   }, 1000); 
 }
-//Tengo que ver porque no me está ejecutando esta función
+//Función creada para que nos diga si lloverá en los próximos dias. Si llueve, añadimos la clase de CSS abajo mencionada para añadir efecto lluvia
 function llovera() {
   setTimeout(() => {
     if (document.querySelector(".tiempo").textContent === "Rain" || document.querySelector(".tiempo1").textContent === "Rain"
